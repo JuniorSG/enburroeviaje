@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import ShowsComponents from "./components/ShowsComponents";
+import Image from "next/image";
 
 type Props = {};
 
@@ -18,12 +19,17 @@ function Eventos({}: Props) {
 
       {/* Pantalla principal con la imagen seleccionada */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
-          <img
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <Image
+            className="max-w-full max-h-full object-contain"
             src={selectedImage}
             alt="Imagen del evento"
-            className="max-w-full max-h-full object-contain"
             onClick={() => setSelectedImage(null)}
+            layout="fill"
+            // objectFit="contain"
           />
         </div>
       )}

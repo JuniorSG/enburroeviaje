@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 type Props = {
   title: string;
@@ -25,12 +26,12 @@ function ShowsComponents({
         className="transform transition-all duration-300 hover:scale-110"
         onClick={() => onImageClick(img)} // Llamar a la función cuando se hace clic
       >
-        <img
+        <Image
+          className="cursor-pointer"
           src={img}
           alt="Imagen del evento"
           width={80}
           height={80}
-          className="cursor-pointer"
         />
       </div>
       <div className="group flex justify-between w-full items-center relative overflow-hidden">
