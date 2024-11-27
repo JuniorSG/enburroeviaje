@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .heroButton{
+        @apply px-2 rounded-full uppercase text-[13px] tracking-widest text-white transition-all hover:text-pink-300 hover:bg-black/40
+    }
+
+        .heroSocial {
+        @apply px-2 transition-all duration-300;
+        /* Agregar hover de escala directamente aquí */
+        @apply transform hover:scale-125;
+    }
+}
+
+
+/* Oculta las barras de desplazamiento en navegadores basados en WebKit (Chrome, Safari) */
+.hidden-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Oculta las barras de desplazamiento en Firefox */
+.hidden-scroll {
+  scrollbar-width: none; /* Firefox */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Monoton&family=Pathway+Gothic+One&display=swap');
+
+.monoton-regular {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crime-tape {
+  width: 100%;
+  height: 100px;
+  background: 
+    repeating-linear-gradient(
+      -45deg,
+      #ffcccc 0,
+      #ff6666 30px,
+      black 30px,
+      black 60px
+    );
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+.crime-tape h1 {
+  animation: moveLeftToRight 15s linear infinite;
+}
+
